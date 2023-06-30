@@ -1,18 +1,29 @@
 import React from "react";
-import {Container, Button } from "react-bootstrap";
-
+import { Container, Row, Col } from "react-bootstrap";
+import SearchForm from "./SearchForm";
+import "./HeroSection.css";
 
 export default function HeroSection() {
   return (
-    <div className='jumbotron jumbotron-fluid bg-dark text-light text-center py-4'>
-    <Container>
-      <h1 className='display-4'>Pianifica la tua prossima avventura</h1>
-      <p className='lead'>
-        Esplora e prenota alloggi unici in tutto il mondo.
-      </p>
-      <Button variant='primary'>Scopri di più</Button>
-    </Container>
-  </div>
-);
-};
+    <div className="jumbotron jumbotron-fluid hero-section">
+      <div className="hero-overlay"></div>
+      <Container className="hero-container">
+        <h1 className="display-4 font-weight-bold">Stay Like a Local, Anywhere You Travel</h1>
+        <p className="lead">Design Your Ideal Vacation Experience with the Right Stay</p>
+        <Row>
+          <Col>
+            <SearchForm />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+}
+
+
+
+
+
+
+
 

@@ -8,6 +8,9 @@ const UserOpSchema = new mongoose.Schema(
         email: { type: String, required: true },
         telephone: { type: Number, required: true },
         password: { type: String, required: true },
+        img: String,
+        provider: { type: String, default: 'register'},
+        verified: { type: Boolean, default: false }
     }
 )
 // Mongoose model

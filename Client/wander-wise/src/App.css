@@ -1,3 +1,7 @@
-/* .body-page{
-  height: calc(100vh - 57.6px);
-} */
+.card-link {
+  text-decoration: none;
+}
+
+* {
+  font-family: Segoe UI, "Helvetica Neue", Helvetica, sans-serif;
+}
