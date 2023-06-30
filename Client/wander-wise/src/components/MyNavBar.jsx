@@ -1,17 +1,38 @@
 import React from 'react';
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import Logo from '../assets/logo.png'
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import './MyNavBar.css'
+
 
 export default function MyNavBar() {
     return (
-        <Navbar bg="light" variant="light">
-            <Container>
-                <Nav.Link href="/"><h3>Wander Wise</h3></Nav.Link>
-                <Nav className="me-auto">
-                    <Nav.Link to="/listing">Listing</Nav.Link>
-                    <Nav.Link to="/about-us">About Us</Nav.Link>
-                    <Nav.Link to="/login">Login</Nav.Link>
-                </Nav>
+
+        <Navbar expand="lg" className="bg-body-tertiary">
+            <Container fluid>
+                <Nav.Link href="/"><h3 className='px-3'><img src={Logo} alt="Logo Wander Wise" className="w-100 m-0" style={{ maxHeight: "40px" }} /></h3></Nav.Link>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <Link className='nav-link mx-2' to="/listing">Listing</Link>
+                        <Link className='nav-link mx-2' to="/about-us">About Us</Link>
+                    </Nav>
+                    <Nav.Link href="#action2">Login</Nav.Link>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
+
+
+
+
+
+
+
     )
 }

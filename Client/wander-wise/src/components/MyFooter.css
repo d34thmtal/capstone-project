@@ -1,0 +1,16 @@
+.bg-custom {
+    background-color: #4DADB1;
+}
+
+footer {
+    color: white;
+}
+
+ul.list-unstyled li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul.list-unstyled li a:hover {
+    text-decoration: none;
+}

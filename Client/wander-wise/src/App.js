@@ -5,6 +5,8 @@ import HomePage from './pages/HomePage';
 import LoginUser from './pages/LoginUser';
 import PropertyPage from './pages/PropertyPage';
 import ListingPage from './pages/ListingPage';
+import AboutUsPage from './pages/AboutUsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path='/listing' element={<ListingPage />} />
+        <Route path='/about-us' element={<AboutUsPage />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
         <Route path='/login' element={<LoginUser />} />
         <Route path="/property/:id" element={<PropertyPage />} />
         {/* <Route element={<ProtectedRoutes />}>

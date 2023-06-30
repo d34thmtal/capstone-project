@@ -123,7 +123,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import MainLayout from "../layout/MainLayout";
 
 
 export default function PropertyPage() {
@@ -138,20 +140,35 @@ export default function PropertyPage() {
   }, [id]);
 
   return (
-    <div>
-      <h1>{property.name}</h1>
-      <p>Type: {property.type}</p>
-      <p>City: {property.city}</p>
-      <p>Guests: {property.maximumGuest}</p>
-      <p>Bedrooms: {property.bedrooms}</p>
-      <p>Bathrooms: {property.bathrooms}</p>
-      <h3>Features:</h3>
-      <ul>
-        {property.features && property.features.map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
-      </ul>
-      <p>Price per night: €{property.pricePerNight}</p>
-    </div>
+    <MainLayout>
+      <Container>
+        <Row>
+          <Col>
+            <img src={property.coverImageUrl} alt={property.name + " for rent"} className="w-100" style={{ maxHeight: "400px", objectFit: "cover" }} />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={8} className="">
+            <h1>{property.name}</h1>
+            <p>Type: {property.type}</p>
+            <p>City: {property.city}</p>
+            <p>Guests: {property.maximumGuest}</p>
+            <p>Bedrooms: {property.bedrooms}</p>
+            <p>Bathrooms: {property.bathrooms}</p>
+            <h3>Features:</h3>
+            <ul>
+              {property.features && property.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+            <p>Price per night: €{property.pricePerNight}</p>
+          </Col>
+          <Col md={4}>
+            <h2>Prova</h2>
+          </Col>
+        </Row>
+      </Container>
+    </MainLayout>
   );
 }
+
