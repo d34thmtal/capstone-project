@@ -1,0 +1,173 @@
+{
+    "name": "Casa Andrea",
+    "city": "Catona",
+    "maximumGuest": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Apartment",
+    "features": [
+      "near the sea",
+      "panoramic view",
+      "air conditioning",
+      "for families"
+    ],
+    "pricePerNight": 100,
+    "coverImageUrl": "https://picsum.photos/203",
+    "gpsPosition": {
+      "latitude": 38.2609,
+      "longitude": 15.6823
+    }
+  },
+  {
+    "name": "Chalet Cozy",
+    "city": "Zermatt",
+    "maximumGuest": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Chalet",
+    "features": [
+      "ski-in/ski-out",
+      "fireplace",
+      "mountain views"
+    ],
+    "pricePerNight": 300,
+    "coverImageUrl": "https://picsum.photos/205",
+    "gpsPosition": {
+      "latitude": 46.020713,
+      "longitude": 7.749117
+    }
+  },
+  {
+    "name": "Beachfront Paradise",
+    "city": "Maui",
+    "maximumGuest": 10,
+    "bedrooms": 6,
+    "bathrooms": 3,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Villa",
+    "features": [
+      "private pool",
+      "jacuzzi",
+      "spacious terrace",
+      "for families",
+      "private chef",
+      "near the sea"
+    ],
+    "pricePerNight": 500,
+    "coverImageUrl": "https://picsum.photos/206",
+    "gpsPosition": {
+      "latitude": 20.7984,
+      "longitude": -156.3319
+    }
+  },
+  {
+    "name": "Cottage Retreat",
+    "city": "Cotswolds",
+    "maximumGuest": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Cottage",
+    "features": [
+      "jacuzzi",
+      "country walks",
+      "fireplace",
+      "garden"
+    ],
+    "pricePerNight": 150,
+    "coverImageUrl": "https://picsum.photos/207",
+    "gpsPosition": {
+      "latitude": 51.929,
+      "longitude": -1.726
+    }
+  },
+  {
+    "name": "Modern Loft",
+    "city": "New York City",
+    "maximumGuest": 3,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Apartment",
+    "features": [
+      "jacuzzi",
+      "spacious terrace",
+      "for families",
+      "city views",
+      "rooftop terrace",
+      "fitness center"
+    ],
+    "pricePerNight": 200,
+    "coverImageUrl": "https://picsum.photos/208",
+    "gpsPosition": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "name": "Secluded Cabin",
+    "city": "Aspen",
+    "maximumGuest": 4,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Cabin",
+    "features": [
+      "ski access",
+      "forest trails",
+      "jacuzzi",
+      "spacious terrace",
+      "for families"
+    ],
+    "pricePerNight": 180,
+    "coverImageUrl": "https://picsum.photos/209",
+    "gpsPosition": {
+      "latitude": 39.1911,
+      "longitude": -106.8175
+    }
+  },
+  {
+    "name": "Mountain Retreat",
+    "city": "Banff",
+    "maximumGuest": 5,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Chalet",
+    "features": [
+      "hiking trails",
+      "hot springs",
+      "mountain views",
+      "spacious terrace",
+      "for families"
+    ],
+    "pricePerNight": 320,
+    "coverImageUrl": "https://picsum.photos/211",
+    "gpsPosition": {
+      "latitude": 51.1784,
+      "longitude": -115.5708
+    }
+  },
+  {
+    "name": "Luxury Penthouse",
+    "city": "Dubai",
+    "maximumGuest": 8,
+    "bedrooms": 5,
+    "bathrooms": 3,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "type": "Apartment",
+    "features": [
+      "private pool",
+      "jacuzzi",
+      "spacious terrace",
+      "for families"
+    ],
+    "pricePerNight": 800,
+    "coverImageUrl": "https://picsum.photos/212",
+    "gpsPosition": {
+      "latitude": 25.2048,
+      "longitude": 55.2708
+    }
+  }
