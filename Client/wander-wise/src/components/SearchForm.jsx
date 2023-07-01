@@ -69,7 +69,6 @@ import { Form, Row, Col, Button } from 'react-bootstrap';
 import { Autocomplete, Select } from "@mantine/core";
 import { IoSearch } from "react-icons/io5";
 
-
 const SearchForm = () => {
     const [location, setLocation] = useState('');
     const [guests, setGuests] = useState(1);
@@ -84,8 +83,6 @@ const SearchForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
 
         console.log('Località:', location);
         console.log('Ospiti:', guests);
@@ -120,7 +117,6 @@ const SearchForm = () => {
                                 { value: 1, label: "1" },
                                 { value: 2, label: "2" },
                                 { value: 3, label: "3" },
-
                                 { value: 4, label: "4" },
                                 { value: 5, label: "5" },
                                 { value: 6, label: "6" },
@@ -133,8 +129,8 @@ const SearchForm = () => {
                     </div>
                 </Col>
                 <Col lg={3} md={6} sm={6} className="text-md-end">
-                    <Button variant="primary btn-lg" type="submit">
-                        Trova
+                    <Button variant="primary btn-lg" type="submit" style={{ backgroundColor: '#4DADB1', color: 'white' }}>
+                        Discover More!
                     </Button>
                 </Col>
             </Row>
@@ -143,3 +139,4 @@ const SearchForm = () => {
 };
 
 export default SearchForm;
+

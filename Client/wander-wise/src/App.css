@@ -5,3 +5,9 @@
 * {
   font-family: Segoe UI, "Helvetica Neue", Helvetica, sans-serif;
 }
+
+@media (max-width: 768px) {
+  body::-webkit-scrollbar {
+    width: 0.0rem;
+  }
+}

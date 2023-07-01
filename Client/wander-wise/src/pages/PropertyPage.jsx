@@ -1,130 +1,11 @@
-// import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
-// import { Container, Row, Col, Form, Button } from "react-bootstrap";
-
-// export default function PropertyPage() {
-//   // const { id } = useParams();
-//   // const [property, setProperty] = useState({});
-//   // const [checkInDate, setCheckInDate] = useState("");
-//   // const [checkOutDate, setCheckOutDate] = useState("");
-//   // const [contactForm, setContactForm] = useState({
-//   //   name: "",
-//   //   email: "",
-//   //   message: "",
-//   // });
-
-//   // useEffect(() => {
-//   //   axios
-//   //     .get(`http://localhost:3001/property/${id}`)
-//   //     .then((response) => setProperty(response.data))
-//   //     .catch((err) => console.log(err));
-//   // }, [id]);
-
-//   // const handleCheckInDateChange = (event) => {
-//   //   setCheckInDate(event.target.value);
-//   // };
-
-//   // const handleCheckOutDateChange = (event) => {
-//   //   setCheckOutDate(event.target.value);
-//   // };
-
-//   // const handleContactFormChange = (event) => {
-//   //   setContactForm({
-//   //     ...contactForm,
-//   //     [event.target.name]: event.target.value,
-//   //   });
-//   // };
-
-//   // const handleContactFormSubmit = (event) => {
-//   //   event.preventDefault();
-//   //   // devo 
-//   // };
-
-//   // if (!property) {
-//   //   return <div>Loading...</div>;
-//   // }
-
-//   return (
-//     <div>
-//       <img src={property.coverImageUrl} alt="Cover" style={{ width: "100%" }} />
-
-//       <Container className="pt-4">
-//         <Row>
-//           <Col md={8}>
-//             <h1>{property.name}</h1>
-//             <h5>Features:</h5>
-//             <ul>
-//               {property.features.map((feature, index) => (
-//                 <li key={index}>{feature}</li>
-//               ))}
-//             </ul>
-//             <p>Location: {property.location}</p>
-//             <p>{property.description}</p>
-//           </Col>
-//           <Col md={4}>
-//             <Form onSubmit={handleContactFormSubmit}>
-//               <Form.Group controlId="checkInDate">
-//                 <Form.Label>Check-In Date</Form.Label>
-//                 <Form.Control
-//                   type="date"
-//                   value={checkInDate}
-//                   onChange={handleCheckInDateChange}
-//                 />
-//               </Form.Group>
-//               <Form.Group controlId="checkOutDate">
-//                 <Form.Label>Check-Out Date</Form.Label>
-//                 <Form.Control
-//                   type="date"
-//                   value={checkOutDate}
-//                   onChange={handleCheckOutDateChange}
-//                 />
-//               </Form.Group>
-//               <Form.Group controlId="name">
-//                 <Form.Label>Name</Form.Label>
-//                 <Form.Control
-//                   type="text"
-//                   name="name"
-//                   value={contactForm.name}
-//                   onChange={handleContactFormChange}
-//                 />
-//               </Form.Group>
-//               <Form.Group controlId="email">
-//                 <Form.Label>Email</Form.Label>
-//                 <Form.Control
-//                   type="email"
-//                   name="email"
-//                   value={contactForm.email}
-//                   onChange={handleContactFormChange}
-//                 />
-//               </Form.Group>
-//               <Form.Group controlId="message">
-//                 <Form.Label>Message</Form.Label>
-//                 <Form.Control
-//                   as="textarea"
-//                   rows={3}
-//                   name="message"
-//                   value={contactForm.message}
-//                   onChange={handleContactFormChange}
-//                 />
-//               </Form.Group>
-//               <Button variant="primary" type="submit">
-//                 Submit
-//               </Button>
-//             </Form>
-//           </Col>
-//         </Row>
-//       </Container>
-//     </div>
-//   );
-// }
-
-
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from "axios";
 import MainLayout from "../layout/MainLayout";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'
+import './PropertyPage.css'
 
 export default function PropertyPage() {
   const { id } = useParams();
@@ -139,12 +20,15 @@ export default function PropertyPage() {
 
   const latitude = property.gpsPosition?.latitude;
   const longitude = property.gpsPosition?.longitude;
+  const [date, setDate] = useState(new Date());
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
 
   return (
     <MainLayout>
       <Container fluid>
         <Row>
-          <Col>
+          <Col className="p-0">
             <img
               src={property.coverImageUrl}
               alt={property.name + " for rent"}
@@ -160,7 +44,7 @@ export default function PropertyPage() {
         <Row>
           <Col md={8} className="px-5">
             <h1>{property.name}</h1>
-            <p>{property.type} for rent in {property.city}</p>
+            <p><strong>{property.type} for rent in {property.city}</strong></p>
             <p>Guests: {property.maximumGuest} Bedrooms: {property.bedrooms} Bathrooms: {property.bathrooms}</p>
             <hr />
             <p>{property.description}</p>
@@ -171,12 +55,57 @@ export default function PropertyPage() {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
+          </Col>
+          <Col md={4} style={{ backgroundColor: "#4DADB1", clipPath: "polygon(0 0, 100% 3%, 100% 95%, 0 95%)", marginTop: "20px", marginBottom: "20pxS", textAlign: "center" }}>
+            <Container className="p-5">
+              <h4>From €{property.pricePerNight}/Night</h4>
+              <Row>
+                <Col md={6}>
+                  <DatePicker
+                    selectsStart
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    startDate={startDate}
+                    placeholderText="Arrival"
+                    className="custom-datepicker"
+                    required="true"
+                  />
+                </Col>
+                <Col md={6}>
+                  <DatePicker
+                    selectsEnd
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    endDate={endDate}
+                    startDate={startDate}
+                    minDate={startDate}
+                    placeholderText="Departure"
+                    className="custom-datepicker"
+                    required="true"
+                  />
 
+                </Col>
+              </Row>
+              <Row>
+                <Col className="px-5">
+                  <input type="number" placeholder="Guest" required />
+                  <input type="text" placeholder="Name" required />
+                  <input type="text" placeholder="Surname" required />
+                  <input type="email" placeholder="Your Email" required />
+                  <input type="phone" placeholder="Phone" />
+                </Col>
+                <Row className="p-5">
+                  <Button
+                    style={{
+                      maxWidth: "200px",
+
+
+                    }}>Send Request</Button>
+                </Row>
+              </Row>
+            </Container>
           </Col>
-          <Col md={4}>
-            <h2>Prova</h2>
-            <p>Price €{property.pricePerNight}</p>
-          </Col>
+
         </Row>
         {latitude && longitude && (
           <Row>
@@ -192,7 +121,7 @@ export default function PropertyPage() {
           </Row>
         )}
       </Container>
-    </MainLayout>
+    </MainLayout >
   );
 }
 
