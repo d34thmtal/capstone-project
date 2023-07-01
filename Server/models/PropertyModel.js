@@ -1,5 +1,3 @@
-// product.model.js
-
 const mongoose = require('mongoose');
 
 const PropertySchema = new mongoose.Schema({
@@ -12,6 +10,14 @@ const PropertySchema = new mongoose.Schema({
     required: true
   },
   maximumGuest: {
+    type: Number,
+    required: true
+  },
+  bedrooms: {
+    type: Number,
+    required: true
+  },
+  bathrooms: {
     type: Number,
     required: true
   },
@@ -36,9 +42,20 @@ const PropertySchema = new mongoose.Schema({
   coverImageUrl: {
     type: String,
     required: true
+  },
+  gpsPosition: {
+    latitude: {
+      type: Number,
+      required: true
+    },
+    longitude: {
+      type: Number,
+      required: true
+    }
   }
 });
 
 const PropertyModel = mongoose.model('property', PropertySchema);
 
 module.exports = PropertyModel;
+

@@ -120,13 +120,11 @@
 // }
 
 
-
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import MainLayout from "../layout/MainLayout";
-
 
 export default function PropertyPage() {
   const { id } = useParams();
@@ -139,36 +137,64 @@ export default function PropertyPage() {
       .catch((err) => console.log(err));
   }, [id]);
 
+  const latitude = property.gpsPosition?.latitude;
+  const longitude = property.gpsPosition?.longitude;
+
   return (
     <MainLayout>
-      <Container>
+      <Container fluid>
         <Row>
           <Col>
-            <img src={property.coverImageUrl} alt={property.name + " for rent"} className="w-100" style={{ maxHeight: "400px", objectFit: "cover" }} />
+            <img
+              src={property.coverImageUrl}
+              alt={property.name + " for rent"}
+              className="w-100"
+              style={{
+                maxHeight: "400px",
+                objectFit: "cover",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 88%)"
+              }}
+            />
           </Col>
         </Row>
         <Row>
-          <Col md={8} className="">
+          <Col md={8} className="px-5">
             <h1>{property.name}</h1>
-            <p>Type: {property.type}</p>
-            <p>City: {property.city}</p>
-            <p>Guests: {property.maximumGuest}</p>
-            <p>Bedrooms: {property.bedrooms}</p>
-            <p>Bathrooms: {property.bathrooms}</p>
+            <p>{property.type} for rent in {property.city}</p>
+            <p>Guests: {property.maximumGuest} Bedrooms: {property.bedrooms} Bathrooms: {property.bathrooms}</p>
+            <hr />
+            <p>{property.description}</p>
+            <hr />
             <h3>Features:</h3>
             <ul>
               {property.features && property.features.map((feature, index) => (
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-            <p>Price per night: €{property.pricePerNight}</p>
+
           </Col>
           <Col md={4}>
             <h2>Prova</h2>
+            <p>Price €{property.pricePerNight}</p>
           </Col>
         </Row>
+        {latitude && longitude && (
+          <Row>
+            <iframe
+              src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12093.4979802523!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1688205566939!5m2!1sit!2sit`}
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Row>
+        )}
       </Container>
     </MainLayout>
   );
 }
+
+
 

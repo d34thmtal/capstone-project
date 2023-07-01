@@ -18,7 +18,7 @@ export default function ListingPage() {
 
   return (
     <MainLayout>
-      <Container className="pt-3">
+      <Container fluid className="pt-3">
         <Row className='justify-content-center'>
           {properties.map((property) => (
             <Col key={property._id} lg={4} md={6} sm={12} className='mb-4'>
@@ -27,7 +27,7 @@ export default function ListingPage() {
                 <Card.Body>
                   <Card.Title><h3>{property.name}</h3></Card.Title>
                   <Card.Text> <h6>{property.type} in {property.city}</h6></Card.Text>
-                  <Card.Text>Guests: {property.maximumGuest} Bedrooms: Bathroms: </Card.Text>
+                  <Card.Text>Guests: {property.maximumGuest} Bedrooms:{property.bedrooms} Bathrooms:{property.bathrooms} </Card.Text>
                   <Card.Text>
                     <li>{property.features[0]}</li>
                     <li>{property.features[1]}</li>
