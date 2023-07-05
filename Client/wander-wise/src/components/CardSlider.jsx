@@ -25,7 +25,7 @@ const CardSlider = () => {
         <>
             <h2>The most requested features</h2>
             <div className="card-container">
-                <Link to="/private-pool" className="text-decoration-none">
+                <Link to="/listing/features=private pool" className="text-decoration-none">
                     <Card
                         effect="crd-effect"
                         image="https://www.villaorchestrasulmare.com/wp-content/uploads/2020/07/IM35225_1920x1080_md.jpg"
@@ -34,7 +34,7 @@ const CardSlider = () => {
                         cta="Discover Now!"
                     />
                 </Link>
-                <Link to="/near-the-sea" className="text-decoration-none">
+                <Link to="/listing/features=near the sea" className="text-decoration-none">
                     <Card
                         effect="crd-effect"
                         image="https://villassardinia.net/wp-content/uploads/2023/05/231f3a39.jpg"
@@ -43,7 +43,7 @@ const CardSlider = () => {
                         cta="Discover Now!"
                     />
                 </Link>
-                <Link to="/for-families" className="text-decoration-none">
+                <Link to="/listing/features=for families" className="text-decoration-none">
                     <Card
                         effect="crd-effect"
                         image="https://www.balearic-villas.com/perch/resources/destinations/family-friendly-mallorca-w1440h810.jpg"
@@ -52,7 +52,7 @@ const CardSlider = () => {
                         cta="Discover Now!"
                     />
                 </Link>
-                <Link to="/jacuzzi" className="text-decoration-none">
+                <Link to="/listing/features=jacuzzi" className="text-decoration-none">
                     <Card
                         effect="crd-effect"
                         image="https://www.villaorchestrasulmare.com/wp-content/uploads/2020/07/IM35209_1920x1080_md.jpg"

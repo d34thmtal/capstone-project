@@ -28,40 +28,35 @@ export default function NavbarSearch() {
                 />
             </div>
             <div className="3/12">
-                <DateRangePicker
-                    initialSettings={{ startDate: '1/1/2014', endDate: '3/1/2014' }}
-                >
-                    <button>Click Me To Open Picker!</button>
-                </DateRangePicker>
-            </div>
-            <div className="w/2/12">
-                <Select
-                    size="lg"
-                    placeholder="Guests"
-                    clearable
-                    data={[
-                        { value: 1, label: "1" },
-                        { value: 2, label: "2" },
-                        { value: 3, label: "3" },
 
-                        { value: 4, label: "4" },
-                        { value: 5, label: "5" },
-                        { value: 6, label: "6" },
-                        { value: 7, label: "7" },
-                        { value: 8, label: "8" },
-                        { value: 9, label: "9" },
-                        { value: 10, label: "10+" },
-                    ]}
-                />
+                <div className="w/2/12">
+                    <Select
+                        size="lg"
+                        placeholder="Guests"
+                        clearable
+                        data={[
+                            { value: 1, label: "1" },
+                            { value: 2, label: "2" },
+                            { value: 3, label: "3" },
+
+                            { value: 4, label: "4" },
+                            { value: 5, label: "5" },
+                            { value: 6, label: "6" },
+                            { value: 7, label: "7" },
+                            { value: 8, label: "8" },
+                            { value: 9, label: "9" },
+                            { value: 10, label: "10+" },
+                        ]}
+                    />
+                </div>
+                <div className="w-2/12">
+                    <Button
+                        className="bg-black hover:bg-slate-800  rounded-none rounded-r-md h-full"
+                        size="md"
+                    >
+                        Search
+                    </Button>
+                </div>
             </div>
-            <div className="w-2/12">
-                <Button
-                    className="bg-black hover:bg-slate-800  rounded-none rounded-r-md h-full"
-                    size="md"
-                >
-                    Search
-                </Button>
-            </div>
-        </div>
-    );
+            );
 }

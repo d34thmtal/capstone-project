@@ -8,7 +8,7 @@ export default function PropertySlider() {
             <h2>The most requested features</h2>
             <Row className="mt-2">
                 <Col lg={3} md={6} sm={12}>
-                    <Link to="/private-pool" className="text-decoration-none">
+                    <Link to="/listing/private-pool" className="text-decoration-none">
                         <Card className="mb-4" style={{ borderRadius: '25px' }}>
                             <Card.Img variant="top" style={{ borderRadius: '25px' }} src="https://picsum.photos/221" />
                             <Card.Body>
@@ -18,7 +18,7 @@ export default function PropertySlider() {
                     </Link>
                 </Col>
                 <Col lg={3} md={6} sm={12}>
-                    <Link to="/near-the-sea" className="text-decoration-none">
+                    <Link to="/listing/near-the-sea" className="text-decoration-none">
                         <Card className="mb-4" style={{ borderRadius: '25px' }}>
                             <Card.Img variant="top" style={{ borderRadius: '25px' }} src="https://picsum.photos/225" />
                             <Card.Body>
@@ -28,7 +28,7 @@ export default function PropertySlider() {
                     </Link>
                 </Col>
                 <Col lg={3} md={6} sm={12}>
-                    <Link to="/for-families" className="text-decoration-none">
+                    <Link to="/listing/for-families" className="text-decoration-none">
                         <Card className="mb-4" style={{ borderRadius: '25px' }}>
                             <Card.Img variant="top" style={{ borderRadius: '25px' }} src="https://picsum.photos/226" />
                             <Card.Body>
@@ -38,7 +38,7 @@ export default function PropertySlider() {
                     </Link>
                 </Col>
                 <Col lg={3} md={6} sm={12}>
-                    <Link to="/jacuzzi" className="text-decoration-none">
+                    <Link to="/listing/jacuzzi" className="text-decoration-none">
                         <Card className="mb-4" style={{ borderRadius: '25px' }}>
                             <Card.Img variant="top" style={{ borderRadius: '25px' }} src="https://picsum.photos/227" />
                             <Card.Body>

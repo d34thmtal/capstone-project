@@ -1,0 +1,1 @@
+GET http://localhost:3001/property/byquery?features=tennis field,fireplace

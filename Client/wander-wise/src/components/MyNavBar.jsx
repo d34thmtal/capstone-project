@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './MyNavBar.css'
 
 
@@ -23,7 +25,7 @@ export default function MyNavBar() {
                         <Link className='nav-link mx-2' to="/listing">Listing</Link>
                         <Link className='nav-link mx-2' to="/about-us">About Us</Link>
                     </Nav>
-                    <Nav.Link href="#action2">Login</Nav.Link>
+                    <Nav.Link href="#action2"><FontAwesomeIcon icon={faUser} style={{ color: "#4dadb1", }} /> Login</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
