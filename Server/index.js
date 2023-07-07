@@ -14,8 +14,10 @@ app.use(express.json());
 // Endpoints
 const UserEndPoints = require('../Server/endpoints/UserOpEndPoint');
 const PropertyEndPoints = require('../Server/endpoints/PropertyEndPoint');
+const ReservationEndPoint = require('../Server/endpoints/ReservationEndPoint')
 app.use(UserEndPoints);
 app.use(PropertyEndPoints);
+app.use(ReservationEndPoint);
 // Middlewares end
 
 

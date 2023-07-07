@@ -15,3 +15,7 @@ ul.list-unstyled li a {
 ul.list-unstyled li a:hover {
     text-decoration: none;
 }
+
+h5 {
+    color: white;
+}
