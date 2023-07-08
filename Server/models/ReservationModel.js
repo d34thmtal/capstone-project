@@ -32,6 +32,10 @@ const ReservationSchema = new mongoose.Schema({
     guestsNumber: {
         type: Number,
         required: false
+    },
+    TotalPrice: {
+        type: Number,
+        required: false
     }
 });
 
