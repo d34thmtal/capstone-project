@@ -14,12 +14,25 @@ export default function PropertyAdminPage() {
             .catch((err) => console.log(err));
     }, []);
 
+    const deleteProperty = (id) => {
+        axios
+            .delete(`http://localhost:3001/property/${id}`)
+            .then((response) => {
+                // Rimuovi la proprietà cancellata dall'array delle proprietà
+                setProperties(properties.filter((property) => property._id !== id));
+            })
+            .catch((error) => {
+                console.log(error);
+                alert('Failed to delete property. Please try again.');
+            });
+    };
+
     return (
         <>
             <AdminLayout>
                 <h2>Manage your Properties</h2>
                 <Button href="/addproperty">Add Property</Button>
-                <table className="property-table"> {/* Add class name for styling */}
+                <table className="property-table">
                     <thead>
                         <tr>
                             <th>Property Name</th>
@@ -35,18 +48,19 @@ export default function PropertyAdminPage() {
                     <tbody>
                         {properties.map((property) => (
                             <tr key={property._id}>
-                                <td>{property.coverImageUrl}</td>
-                                <td>{property.description}</td>
-                                <td>{property.type}</td>
-                                <td>{property.features}</td>
                                 <td>{property.name}</td>
                                 <td>{property.city}</td>
                                 <td>{property.maximumGuest}</td>
                                 <td>{property.bedrooms}</td>
                                 <td>{property.bathrooms}</td>
-                                <td>{property.pricePerNight}</td>
-                                <td></td>
-                                <td></td>
+                                <td>€{property.pricePerNight}</td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <Button variant="danger" onClick={() => deleteProperty(property._id)}>
+                                        Delete
+                                    </Button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -55,3 +69,4 @@ export default function PropertyAdminPage() {
         </>
     );
 }
+

@@ -45,11 +45,11 @@ const PropertySchema = new mongoose.Schema({
   },
   gpsPosition: {
     latitude: {
-      type: Number,
+      type: String,
       // required: true
     },
     longitude: {
-      type: Number,
+      type: String,
       // required: true
     }
   }
@@ -58,4 +58,3 @@ const PropertySchema = new mongoose.Schema({
 const PropertyModel = mongoose.model('property', PropertySchema);
 
 module.exports = PropertyModel;
-

@@ -104,7 +104,7 @@ export default function ListingPage() {
                   onChange={handleCheckBoxChange}
                   className="green-btn"
                 />
-                {/* Aggiungi la classe "green-btn" anche agli altri MDBCheckbox */}
+
                 <MDBCheckbox
                   btn
                   id='btn-check4'

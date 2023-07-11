@@ -106,8 +106,16 @@ router.get('/property/byquery', async (request, response) => {
 
     // } catch (error) {
     //     response.status(500).send("Errore interno server")
+})
 
-
+router.delete('/property/:id', async (request, response, next) => {
+    try {
+        response.status(200).json(
+            await PropertyModel.findByIdAndDelete(request.params.id))
+    } catch (err) {
+        //res.status(400).json({error: "User ID not found"}, ...err);
+        next();
+    }
 })
 
 
