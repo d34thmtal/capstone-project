@@ -1,0 +1,21 @@
+.reservation-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.reservation-table th,
+.reservation-table td {
+    border: 1px solid white;
+    /* Add white border */
+    padding: 8px;
+}
+
+.-table th {
+    background-color: lightgray;
+    /* Add light gray background */
+}
+
+.reservation-table td {
+    background-color: rgb(239, 238, 238);
+
+}

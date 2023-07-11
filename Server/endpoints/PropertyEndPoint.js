@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const upload = require('../middleware/UpLoadImg');
+
 // const bcrypt = require('bcrypt');
 
 
@@ -23,12 +25,28 @@ router.get('/property/:id', async (req, res, next) => {
 })
 
 
-router.post('/property', async (req, res, next) => {
-    res.status(201).json(
-        await (new PropertyModel(req.body)).save()
-    )
-})
+router.post('/property', upload.single('coverImageUrl'), async (req, res, next) => {
+    const data = req.file ? req.file.path : '';
+    try {
+        const property = new PropertyModel({
+            ...req.body,
+            coverImageUrl: data,
+        })
+        await property.save();
+        return res.status(201).json(property)
 
+        // const property = await new PropertyModel(req.body).save();
+        // res.status(201).json(property);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// router.post('/property', async (req, res, next) => {
+//     res.status(201).json(
+//         await (new PropertyModel(req.body)).save()
+//     )
+// })
 
 //filtro feature
 

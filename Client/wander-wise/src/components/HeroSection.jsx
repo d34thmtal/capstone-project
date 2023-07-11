@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import SearchForm from "./SearchForm";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "./HeroSection.css";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -10,9 +10,9 @@ export default function HeroSection() {
       <Container className="hero-container">
         <h1 className="display-4 font-weight-bold">Stay Like a Local, Anywhere You Travel</h1>
         <p className="lead">Design Your Ideal Vacation Experience with the Right Stay</p>
+        <Link className='nav-link mx-2' to="/listing"><Button variant="primary btn-lg" type="submit" style={{ backgroundColor: '#4DADB1', color: 'white' }}>Discover More</Button></Link>
         <Row>
           <Col>
-            <SearchForm />
           </Col>
         </Row>
       </Container>

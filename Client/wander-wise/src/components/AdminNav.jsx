@@ -1,15 +1,15 @@
+
 import React from 'react';
 import Logo from '../assets/logo.png'
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './MyNavBar.css'
 
-
-export default function MyNavBar() {
+export default function AdminNav() {
     return (
 
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -22,10 +22,10 @@ export default function MyNavBar() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Link className='nav-link mx-2' to="/listing">Listing</Link>
-                        <Link className='nav-link mx-2' to="/about-us">About Us</Link>
+                        <Link className='nav-link mx-2' to="/adminreservations">Reservation</Link>
+                        <Link className='nav-link mx-2' to="/adminproperties">Property</Link>
                     </Nav>
-                    <Nav.Link href="/adminreservations"><FontAwesomeIcon icon={faUser} style={{ color: "#4dadb1", }} /> Login</Nav.Link>
+                    <Nav.Link href="/"><FontAwesomeIcon icon={faArrowRightFromBracket} style={{ color: "#4dadb1", }} /> Logout</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

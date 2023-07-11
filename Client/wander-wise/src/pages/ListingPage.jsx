@@ -127,8 +127,8 @@ export default function ListingPage() {
                   btn
                   id='btn-check6'
                   wrapperTag='span'
-                  label="Gargen"
-                  value="gargen"
+                  label="Garden"
+                  value="garden"
                   onChange={handleCheckBoxChange}
                   className="green-btn"
                 />

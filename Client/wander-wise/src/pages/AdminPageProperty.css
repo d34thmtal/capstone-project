@@ -1,0 +1,21 @@
+.property-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.property-table th,
+.property-table td {
+    border: 1px solid white;
+    /* Add white border */
+    padding: 8px;
+}
+
+.property-table th {
+    background-color: lightgray;
+
+}
+
+.property-table td {
+    background-color: rgb(239, 238, 238);
+
+}

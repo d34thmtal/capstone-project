@@ -108,9 +108,16 @@ export default function PropertyPage() {
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
   const [nights, setNights] = useState(1);
-  //
+
+
+  // const [erros, setErrors] = useState('')
+  // const [allertReservation, setAllertReservation] = useState(false)
+
+
+
   const [reservation, setReservation] = useState({});
   const navigate = useNavigate();
+
 
   const formHandler = (event) => {
     const { name, value } = event.target;
@@ -150,6 +157,69 @@ export default function PropertyPage() {
         console.error(error);
       });
   };
+
+
+
+
+  //con andrea
+
+
+  // const formHandlerReservation = () => {
+  //   if (
+  //     reservation.propertyName &&
+  //     reservation.guestName &&
+  //     reservation.guestLastName &&
+  //     reservation.guestMail &&
+  //     reservation.guestPhone &&
+  //     // reservation.arrivalDate &&
+  //     // reservation.departureDate &&
+  //     reservation.guestsNumber
+
+  //   ) {
+  //     let data = new FormData();
+  //     data.append('propertyName', reservation.propertyName);
+  //     data.append('guestName', reservation.guestName);
+  //     data.append('guestLastName', reservation.guestLastName);
+  //     data.append('guestMail', reservation.guestMail);
+  //     data.append('guestPhone', reservation.guestPhone);
+  //     data.append('arrivalDate', reservation.arrivalDate);
+  //     data.append('departureDate', reservation.departureDate);
+  //     data.append('guestsNumber', reservation.guestsNumber);
+  //     data.append('totalPrice', reservation.totalPrice);
+  //     const config = {
+  //       headers: { 'content-type': 'multipart/form-data' },
+  //     };
+  //     axios
+  //       .post('http://localhost:3001/reservation', data, config)
+  //       .then((response) => {
+  //         const { status, data } = response;
+  //         if (status === 200 && data.status === 'Reservation created') {
+  //           setAllertReservation(true)
+  //         } else if (status === 200 && data.error === 'Mail already exists') {
+  //           setErrors('Mail già registrato con lo stesso nome.');
+  //         } else if (status === 200 && data.error === 'Phone already exists') {
+  //           setErrors('Phone già registrato con lo stesso nome.');
+  //         } else if (status === 200 && data.error === 'startDates already exists') {
+  //           setErrors('startDates già registrato con lo stesso nome.');
+  //         } else if (status === 200 && data.error === 'endDates already exists') {
+  //           setErrors('endDates già registrato con lo stesso nome.');
+  //         } else {
+  //           setErrors('Si è verificato un errore durante la Prenotazione')
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         setErrors('Si è verificato un errore durante la Prenotazione')
+  //       })
+  //   } else {
+  //     setErrors('Compila tutti i dati')
+  //   }
+  // }
+
+
+
+
+
+
 
   return (
     <MainLayout>
@@ -278,9 +348,11 @@ export default function PropertyPage() {
                   })} />
                 </Col>
                 <Row className="p-5">
-                  <h4>Total € <span name="totalPrice">{nights * property.pricePerNight}</span></h4>
+                  <h4>Total € <input name="totalPrice" onChange={(e) => setFormState({ ...formState, totalPrice: e.target.value })} value={nights * property.pricePerNight} /></h4>
+                  {/* {erros && <div className="text-danger mt-2">{erros}</div>} */}
                   <Button
                     onClick={formSubmittedHandler}
+                    // onClick={formHandlerReservation}
                     style={{
                       maxWidth: "200px",
                     }}>Send Request</Button>

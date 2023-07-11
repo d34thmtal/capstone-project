@@ -9,7 +9,7 @@ const UserOpSchema = new mongoose.Schema(
         telephone: { type: Number, required: true },
         password: { type: String, required: true },
         img: String,
-        provider: { type: String, default: 'register'},
+        provider: { type: String, default: 'register' },
         verified: { type: Boolean, default: false }
     }
 )
@@ -18,3 +18,5 @@ const UserOpModel = mongoose.model('users', UserOpSchema)
 
 // Export Model
 module.exports = UserOpModel;
+
+

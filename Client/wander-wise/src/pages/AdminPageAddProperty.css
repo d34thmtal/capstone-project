@@ -1,0 +1,27 @@
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container .form-group {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container .preview-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+.form-container .submit-button {
+    margin-top: 20px;
+}

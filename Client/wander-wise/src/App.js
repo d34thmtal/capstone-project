@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import HomePage from './pages/HomePage';
-// import Listing from './pages/ListingPage';
 import LoginUser from './pages/LoginUser';
 import PropertyPage from './pages/PropertyPage';
 import ListingPage from './pages/ListingPage';
 import AboutUsPage from './pages/AboutUsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ListingPageFeatures from './pages/ListingPageFeatures';
+import ReservationAdminPage from './pages/AdminPageReservation';
+import PropertyAdminPage from './pages/AdminPageProperty';
+import AdminPageAddProperty from './pages/AdminPageAddProperty';
 
 function App() {
   return (
@@ -23,6 +23,9 @@ function App() {
           <Route path='/login' element={<LoginUser />} />
           <Route path="/property/:id" element={<PropertyPage />} />
           <Route path="/listing/:features" element={<ListingPageFeatures />} />
+          <Route path="/adminreservations" element={<ReservationAdminPage />} />
+          <Route path="/adminproperties" element={<PropertyAdminPage />} />
+          <Route path="/addproperty" element={<AdminPageAddProperty />} />
           {/* <Route element={<ProtectedRoutes />}>
             tutte le rotte contenute al suo interno vengono protette. Da inserire le rotte del back
         </Route> */}
