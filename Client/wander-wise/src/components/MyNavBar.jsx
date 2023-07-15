@@ -25,7 +25,7 @@ export default function MyNavBar() {
                         <Link className='nav-link mx-2' to="/listing">Listing</Link>
                         <Link className='nav-link mx-2' to="/about-us">About Us</Link>
                     </Nav>
-                    <Nav.Link href="/adminreservations"><FontAwesomeIcon icon={faUser} style={{ color: "#4dadb1", }} /> Login</Nav.Link>
+                    <Nav.Link href="/login"><FontAwesomeIcon icon={faUser} style={{ color: "#4dadb1", }} /> Login</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

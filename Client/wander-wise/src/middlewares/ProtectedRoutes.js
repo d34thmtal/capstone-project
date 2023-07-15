@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-import Login from "../pages/Login";
+import LoginPage from "../pages/LoginPage";
+
 
 const useAuth = () => {
   return JSON.parse(localStorage.getItem("userLogin"));
@@ -21,6 +22,6 @@ const useSession = () => {
 
 export default function ProtectedRoutes() {
   const isAuthorized = useAuth();
-  const session = useSession();
-  return isAuthorized ? <Outlet /> : <Login />;
+  useSession();
+  return isAuthorized ? <Outlet /> : <LoginPage />;
 }

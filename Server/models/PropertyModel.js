@@ -3,54 +3,54 @@ const mongoose = require('mongoose');
 const PropertySchema = new mongoose.Schema({
   name: {
     type: String,
-    // required: true
+    required: true
   },
   city: {
     type: String,
-    // required: true
+    required: true
   },
   maximumGuest: {
     type: Number,
-    // required: true
+    required: true
   },
   bedrooms: {
     type: Number,
-    // required: true
+    required: true
   },
   bathrooms: {
     type: Number,
-    // required: true
+    required: true
   },
   description: {
     type: String,
-    // required: true
+    required: true
   },
   type: {
     type: String,
-    // required: true
+    required: true
   },
   features: [
     {
       type: String,
-      // required: true
+      required: true
     }
   ],
   pricePerNight: {
     type: Number,
-    // required: true
+    required: true
   },
   coverImageUrl: {
     type: String,
-    // required: true
+    required: true
   },
   gpsPosition: {
     latitude: {
       type: String,
-      // required: true
+      required: true
     },
     longitude: {
       type: String,
-      // required: true
+      required: true
     }
   }
 });

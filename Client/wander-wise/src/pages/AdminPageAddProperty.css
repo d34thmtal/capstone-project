@@ -25,3 +25,19 @@
 .form-container .submit-button {
     margin-top: 20px;
 }
+
+.custom-checkbox-small .custom-control-input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox-small .custom-control-label {
+    margin-left: 0.5rem;
+    display: flex;
+    justify-content: end;
+}

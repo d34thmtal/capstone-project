@@ -16,6 +16,6 @@ ul.list-unstyled li a:hover {
     text-decoration: none;
 }
 
-h5 {
+div:nth-child(n)>h5 {
     color: white;
 }

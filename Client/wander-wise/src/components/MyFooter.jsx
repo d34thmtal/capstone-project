@@ -6,23 +6,21 @@ import './MyFooter.css';
 export default function MyFooter() {
   return (
     <footer className='bg-custom py-3'>
-      <Container>
+      <Container fluid className="px-5">
         <Row>
           <Col lg={4} md={6} sm={12}>
             <h5>About</h5>
             <ul className='list-unstyled'>
               <li><Link className='text-decoration-none' to='/about-us'>About Us</Link></li>
-              <li><Link to='/terms-conditions'>Terms and Conditions</Link></li>
               <li><Link to='/privacy-policy'>Privacy Policy</Link></li>
-              <li><Link to='/help'>Help</Link></li>
             </ul>
           </Col>
           <Col lg={4} md={6} sm={12}>
             <h5>Discover</h5>
             <ul className='list-unstyled'>
               <li><Link to='/listing'>Vacation Homes</Link></li>
-              <li><Link to='/experiences'>Experiences</Link></li>
-              <li><Link to='/assistance'>Assistance</Link></li>
+              <li><Link to='/listing/features=private pool'>Private Pool Houses</Link></li>
+              <li><Link to='/listing/features=near the sea'>Few Steps From The Sea</Link></li>
             </ul>
           </Col>
           <Col lg={4} md={12} sm={12}>

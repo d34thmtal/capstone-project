@@ -1,24 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdminLayout from '../layout/AdminLayout';
-import { Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import './AdminPageProperty.css';
 
 export default function PropertyAdminPage() {
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
     const [properties, setProperties] = useState([]);
+    const [confirmedRows, setConfirmedRows] = useState([]);
+
+    const toggleRowConfirmation = (propertyId) => {
+        if (confirmedRows.includes(propertyId)) {
+            setConfirmedRows(confirmedRows.filter((id) => id !== propertyId));
+        } else {
+            setConfirmedRows([...confirmedRows, propertyId]);
+        }
+    };
 
     useEffect(() => {
+        setLoading(true);
         axios
             .get('http://localhost:3001/property')
-            .then((response) => setProperties(response.data))
-            .catch((err) => console.log(err));
+            .then((response) => {
+                setProperties(response.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                setLoading(false);
+            });
     }, []);
 
     const deleteProperty = (id) => {
         axios
             .delete(`http://localhost:3001/property/${id}`)
             .then((response) => {
-                // Rimuovi la proprietà cancellata dall'array delle proprietà
                 setProperties(properties.filter((property) => property._id !== id));
             })
             .catch((error) => {
@@ -26,6 +44,18 @@ export default function PropertyAdminPage() {
                 alert('Failed to delete property. Please try again.');
             });
     };
+
+    if (loading) {
+        return (
+            <AdminLayout>
+                <Container className="d-flex align-items-center justify-content-center vh-100">
+                    <Spinner animation="border" role="status" variant="primary">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                </Container>
+            </AdminLayout>
+        );
+    }
 
     return (
         <>
@@ -55,12 +85,15 @@ export default function PropertyAdminPage() {
                                 <td>{property.bathrooms}</td>
                                 <td>€{property.pricePerNight}</td>
                                 <td>
-
+                                    <Button variant="primary" onClick={() => navigate(`/editproperty/${property._id}`)}>
+                                        Edit
+                                    </Button>
                                 </td>
                                 <td>
                                     <Button variant="danger" onClick={() => deleteProperty(property._id)}>
                                         Delete
-                                    </Button></td>
+                                    </Button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -69,4 +102,3 @@ export default function PropertyAdminPage() {
         </>
     );
 }
-

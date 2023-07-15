@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Spinner, ToggleButton } from "react-bootstrap";
 import { faUsers, faBed, faBath } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
-import { MDBCheckbox, MDBBtnGroup } from 'mdb-react-ui-kit';
 import axios from "axios";
 import MainLayout from "../layout/MainLayout";
 import './ListingPage.css'
@@ -13,14 +12,36 @@ import './ListingPage.css'
 export default function ListingPage() {
   const [properties, setProperties] = useState([]);
   const [query, setQuery] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [checked, setChecked] = useState(false);
 
 
   useEffect(() => {
+    setLoading(true);
+
     axios
       .get(`http://localhost:3001/property/byquery?features=${query.join(",")}`)
-      .then((response) => setProperties(response.data))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        setProperties(response.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, [query]);
+
+  if (loading) {
+    return (
+      <MainLayout>
+        <Container className="d-flex align-items-center justify-content-center vh-100">
+          <Spinner animation="border" role="status" variant="success">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </Container>
+      </MainLayout>
+    );
+  }
 
   const handleCheckBoxChange = (e) => {
     const { value, checked } = e.target
@@ -34,10 +55,11 @@ export default function ListingPage() {
 
   return (
     <MainLayout>
-      <Container fluid>
+      <Container fluid className="mab-5">
         <Row className='justify-content-center'>
           <Col lg={8} md={8} sm={12}>
             <Row>
+              <h1>Explore your next holiday destination</h1>
               {properties.map((property) => (
                 <Col key={property._id} lg={4} md={6} sm={12} className='mb-4'>
                   <Link to={`/property/${property._id}`} style={{ textDecoration: "none", width: "300px" }}>
@@ -61,121 +83,128 @@ export default function ListingPage() {
               ))}
             </Row>
           </Col>
-          <Col lg={2} md={2} sm={12}>
+          <Col lg={2} md={2} sm={12} className="sticky-col">
 
             <Row>
               <div>
-                <h3>Features</h3>
+                <h3 style={{ textAlign: "center" }}>Main Features</h3>
               </div>
-              <MDBBtnGroup className="gap-2 d-flex flex-column">
-                <MDBCheckbox
-                  btn
-                  id='btn-check'
-                  wrapperTag='span'
-                  label="Private Pool"
-                  value="private pool"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  id='btn-check1'
-                  wrapperTag='span'
-                  label="Tennis Field"
-                  value="tennis field"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  id='btn-check2'
-                  wrapperTag='span'
-                  label="Jacuzzi"
-                  value="jacuzzi"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  id='btn-check3'
-                  wrapperTag='span'
-                  label="Fireplace"
-                  value="fireplace"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-
-                <MDBCheckbox
-                  btn
-                  id='btn-check4'
-                  wrapperTag='span'
-                  label="Air Conditioning"
-                  value="air conditioning"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  id='btn-check5'
-                  wrapperTag='span'
-                  label="Spacious Terrace"
-                  value="spacious terrace"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  id='btn-check6'
-                  wrapperTag='span'
-                  label="Garden"
-                  value="garden"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  id='btn-check7'
-                  wrapperTag='span'
-                  label="Panoramic View"
-                  value="panoramic view"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-                <MDBCheckbox
-                  btn
-                  variant="dark"
-                  id='btn-check8'
-                  wrapperTag='span'
-                  label="Gym"
-                  value="gym"
-                  onChange={handleCheckBoxChange}
-                  className="green-btn"
-                />
-              </MDBBtnGroup>
-            </Row>
-          </Col>
-        </Row>
+              <Container fluid className="filter-section">
+                <div className="gap-2 d-flex flex-column align-items-center">
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("private pool")}
+                    id='btn-check'
+                    value="private pool"
+                    onChange={handleCheckBoxChange}
+                  >
+                    Private Pool
+                  </ToggleButton>
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("jacuzzi")}
+                    id='btn-check2'
+                    value="jacuzzi"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton"
+                  >
+                    Jacuzzi
+                  </ToggleButton>
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("air conditioning")}
+                    id='btn-check4'
+                    value="air conditioning"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton"
+                  >
+                    Air Conditioning
+                  </ToggleButton>
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("spacious terrace")}
+                    id='btn-check5' va
+                    value="spacious terrace"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton"
+                  >
+                    Spacious Terrace
+                  </ToggleButton>
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("garden")}
+                    id='btn-check6'
+                    value="garden"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton"
+                  >
+                    Garden
+                  </ToggleButton>
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("panoramic view")}
+                    id='btn-check7'
+                    value="panoramic view"
+                    onChange={handleCheckBoxChange}
+                  >
+                    Panoramic View
+                  </ToggleButton>
+                  <ToggleButton
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("gym")}
+                    id='btn-check8'
+                    value="gym"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton"
+                  >
+                    Gym
+                  </ToggleButton>
+                  <ToggleButton
+                    id='btn-check10'
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("near the sea")}
+                    value="near the sea"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton"
+                  >
+                    Near The Sea
+                  </ToggleButton>
+                  <ToggleButton
+                    id="toggle-families"
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("for families")}
+                    value="for families"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton mb-2"
+                  >
+                    For Families
+                  </ToggleButton>
+                  <ToggleButton
+                    id="toggle-check"
+                    type="checkbox"
+                    variant="outline-success"
+                    checked={query.includes("private chef")}
+                    value="private chef"
+                    onChange={handleCheckBoxChange}
+                    className="checkboxbutton mb-2"
+                  >
+                    Private Chef
+                  </ToggleButton>
+                </div >
+              </Container >
+            </Row >
+          </Col >
+        </Row >
       </Container >
     </MainLayout >
   );
 }
-
-
-{/* <div>
-                <div onClick={handleCheckBoxChange}>
-                  <img src="https://picsum.photos/216" alt="Private Pool" />
-                  <span>Private Pool</span>
-                </div>
-                <div onClick={handleCheckBoxChange}>
-                  <img src="https://picsum.photos/216" alt="Tennis Field" />
-                  <span>Tennis Field</span>
-                </div>
-                <div onClick={handleCheckBoxChange}>
-                  <img src="https://picsum.photos/216" alt="Jacuzzi" />
-                  <span>Jacuzzi</span>
-                </div>
-                <div onClick={handleCheckBoxChange}>
-                  <img src="https://picsum.photos/216" alt="Fireplace" />
-                  <span>Fireplace</span>
-                </div>
-              </div> */}

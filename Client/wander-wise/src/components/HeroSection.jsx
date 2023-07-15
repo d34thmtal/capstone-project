@@ -10,7 +10,7 @@ export default function HeroSection() {
       <Container className="hero-container">
         <h1 className="display-4 font-weight-bold">Stay Like a Local, Anywhere You Travel</h1>
         <p className="lead">Design Your Ideal Vacation Experience with the Right Stay</p>
-        <Link className='nav-link mx-2' to="/listing"><Button variant="primary btn-lg" type="submit" style={{ backgroundColor: '#4DADB1', color: 'white' }}>Discover More</Button></Link>
+        <Link className='nav-link mx-2' to="/listing"><Button variant="primary btn-lg" type="submit" style={{ backgroundColor: '#4DADB1', color: 'white', border: "0" }}>Discover More</Button></Link>
         <Row>
           <Col>
           </Col>

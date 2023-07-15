@@ -1,11 +1,14 @@
-import React from 'react'
-import AdminNav from '../components/AdminNav'
+import React from 'react';
+import AdminNav from '../components/AdminNav';
+import { Container } from 'react-bootstrap';
 
 export default function AdminLayout({ children }) {
     return (
-        <div>
+        <>
             <AdminNav />
-            <div className='body-page'>{children}</div>
-        </div>
-    )
+            <Container fluid className='body-page'>
+                {children}
+            </Container>
+        </>
+    );
 }

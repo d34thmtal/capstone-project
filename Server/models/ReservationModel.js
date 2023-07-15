@@ -3,39 +3,39 @@ const mongoose = require('mongoose');
 const ReservationSchema = new mongoose.Schema({
     propertyName: {
         type: String,
-        required: false
+        required: true
     },
     guestName: {
         type: String,
-        required: false
+        required: true
     },
     guestLastName: {
         type: String,
-        required: false
+        required: true
     },
     guestMail: {
         type: String,
-        required: false
+        required: true
     },
     guestPhone: {
         type: Number,
-        required: false
+        required: true
     },
     arrivalDate: {
         type: String,
-        required: false
+        required: true
     },
     departureDate: {
         type: String,
-        required: false
+        required: true
     },
     guestsNumber: {
         type: Number,
-        required: false
+        required: true
     },
     totalPrice: {
         type: Number,
-        required: false
+        required: true
     }
 });
 

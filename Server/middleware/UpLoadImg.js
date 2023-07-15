@@ -15,9 +15,10 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'uploads/',
-        //format: async (req, file) => 'png', // supports promises as well
+        folder: 'uploads',
+        // allowed_formats: ["wepb", "jpeg"],
         public_id: (req, file) => file.originalname,
+        quality: 'auto:low',
     },
 });
 

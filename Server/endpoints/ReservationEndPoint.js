@@ -13,6 +13,15 @@ router.post('/reservation', async (req, res, next) => {
     )
 })
 
+router.delete('/reservation/:id', async (req, res, next) => {
+    try {
+        res.status(200).json(
+            await ReservationModel.findByIdAndDelete(req.params.id))
+    } catch (err) {
+        next();
+    }
+})
+
 // router.post('/reservation', async (req, res) => {
 //     const { propertyName, guestName, guestLastName, guestMail, guestPhone, arrivalDate, departureDate, guestsNumber, totalPrice } = req.body;
 //     try {

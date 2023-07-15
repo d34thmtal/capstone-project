@@ -28,22 +28,13 @@ app.use(express.json());
 const UserEndPoints = require('../Server/endpoints/UserOpEndPoint');
 const PropertyEndPoints = require('../Server/endpoints/PropertyEndPoint');
 const ReservationEndPoint = require('../Server/endpoints/ReservationEndPoint')
+const AouthUser = require('../Server/endpoints/AouthUser');
 app.use(UserEndPoints);
 app.use(PropertyEndPoints);
-app.use(ReservationEndPoint);
+app.use(ReservationEndPoint)
+app.use(AouthUser);
+
 // Middlewares end
-
-
-// const storage = new CloudinaryStorage({
-//     cloudinary: cloudinary,
-//     params: {
-//         folder: 'uploads/',
-//         //format: async (req, file) => 'png', // supports promises as well
-//         public_id: (req, file) => file.originalname,
-//     },
-// });
-
-
 
 
 mongoose

@@ -16,3 +16,29 @@
     width: 0.0rem;
   }
 }
+
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  min-height: 100vh;
+  min-height: calc(100vh - (658px + 241px));
+
+}
+
+
+
+/* #root {
+  min-height: 100%;
+  position: relative;
+} */
+
+footer {
+  position: absolute;
+  /* bottom: 0; */
+  width: 100%;
+
+}

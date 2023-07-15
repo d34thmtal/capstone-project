@@ -13,6 +13,10 @@
     transform: scale(1.07);
 }
 
+h1 {
+    text-align: center;
+}
+
 .card>img {
     object-fit: fill;
     min-width: 300px;
@@ -52,7 +56,29 @@ h5 {
     margin: 0;
 }
 
+/* 
 .green-btn {
     background-color: green;
     width: 100%;
+} */
+
+.sticky-col {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - (65px + 241px));
+    min-height: 500px;
+    overflow-y: auto;
+    overflow: hidden;
+    /* Aggiunge uno scorrimento verticale se il contenuto supera l'altezza del componente */
 }
+
+.rounded {
+    /* max-height: 240px; */
+    height: 240px;
+
+}
+
+/* .active-checkbox {
+    background-color: blue !important;
+    color: white !important;
+} */
