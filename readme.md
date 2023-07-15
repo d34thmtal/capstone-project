@@ -1,1 +1,1 @@
-Repositoru Fatta singola sia per client che per server per questioni di praticità. Sono perfettamente conscio che sia errato nella pratica, ma dopo un confronto col tutor ho optato per questa soluzione per una questione di tempo.
+Repository Fatta singola sia per client che per server per questioni di praticità. Sono perfettamente conscio che sia errato nella pratica, ma dopo un confronto col tutor ho optato per questa soluzione per una questione di tempo.
