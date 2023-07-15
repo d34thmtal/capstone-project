@@ -12,7 +12,7 @@ const Error404Page = () => {
                     <Col className="text-center py-lg-5">
                         <h1>Error 404</h1>
                         <p>The requested page was not found.</p>
-                        <Button variant="primary" href="/">Go Back to Home</Button>
+                        <Button variant="success" href="/">Go Back to Home</Button>
                     </Col>
                 </Row>
             </Container>

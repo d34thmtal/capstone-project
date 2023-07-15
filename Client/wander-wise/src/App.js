@@ -31,7 +31,7 @@ function App() {
             <Route path="/adminreservations" element={<ReservationAdminPage />} />
             <Route path="/adminproperties" element={<PropertyAdminPage />} />
             <Route path="/addproperty" element={<AdminPageAddProperty />} />
-            <Route path="/editproperty/:id" element={<AdminPageEditProperty />} />
+            {/* <Route path="/editproperty/:id" element={<AdminPageEditProperty />} /> disattivata per miglior sviluppo futuro*/}
           </Route>
         </Routes>
       </BrowserRouter>
