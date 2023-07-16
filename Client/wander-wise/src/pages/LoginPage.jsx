@@ -48,10 +48,10 @@ export default function LoginPage() {
                 <Col className="p-5" md={12} style={{ backgroundColor: "#4DADB1", marginTop: "20px", marginBottom: "20px", textAlign: "center", zIndex: "0" }}>
                     <h1 className="mb-3 px-4">Login</h1>
                     <Form className="my-3">
-                        <Form.Group className="mb-3 px-4 login-password" controlId="formEmail">
+                        <Form.Group className="mb-3 login-password d-flex justify-content-center " controlId="formEmail" style={{ width: "50vw" }}>
                             <Form.Control type="email" name="email" placeholder="Enter email" onChange={formHandler} />
                         </Form.Group>
-                        <Form.Group className="mb-3 px-4 login-password" controlId="formPassword">
+                        <Form.Group className="mb-3 login-password d-flex justify-content-center" controlId="formPassword" style={{ width: "50vw" }}>
                             <Form.Control type="password" name="password" placeholder="Enter password" onChange={formHandler} />
                         </Form.Group>
                         <Form.Group className="mb-3 px-4" controlId="formButton">

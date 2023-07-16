@@ -62,7 +62,7 @@ export default function PropertyAdminPage() {
             <AdminLayout>
                 <h2>Manage your Properties</h2>
                 <Button href="/addproperty">Add Property</Button>
-                <table className="property-table">
+                <table className="property-table property-table-wrapper">
                     <thead>
                         <tr>
                             <th>Property Name</th>
@@ -71,7 +71,7 @@ export default function PropertyAdminPage() {
                             <th>Bedrooms</th>
                             <th>Bathrooms</th>
                             <th>Price/Night</th>
-                            <th>Edit</th>
+                            {/* <th>Edit</th> */}
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -84,11 +84,11 @@ export default function PropertyAdminPage() {
                                 <td>{property.bedrooms}</td>
                                 <td>{property.bathrooms}</td>
                                 <td>€{property.pricePerNight}</td>
-                                <td>
+                                {/* <td>
                                     <Button variant="primary" onClick={() => navigate(`/editproperty/${property._id}`)}>
                                         Edit
                                     </Button>
-                                </td>
+                                </td> */}
                                 <td>
                                     <Button variant="danger" onClick={() => deleteProperty(property._id)}>
                                         Delete

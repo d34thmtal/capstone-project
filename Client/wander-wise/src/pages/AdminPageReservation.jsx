@@ -57,49 +57,50 @@ export default function ReservationAdminPage() {
     return (
         <AdminLayout>
             <h2>Manage your Bookings</h2>
-            <table className="reservation-table">
-                <thead>
-                    <tr>
-                        <th>Reservation ID</th>
-                        <th>Property Name</th>
-                        <th>Check-in</th>
-                        <th>Check-out</th>
-                        <th>Guests</th>
-                        <th>Customer</th>
-                        <th>Mail</th>
-                        <th>Phone</th>
-                        <th>Total Price</th>
-                        {/* <th>Confirm</th> */}
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {reservations.map((reservation) => (
-                        <tr key={reservation._id} className={confirmedRows.includes(reservation._id) ? 'confirmed-row' : ''}>
-                            <td>{reservation._id}</td>
-                            <td>{reservation.propertyName}</td>
-                            <td>{reservation.arrivalDate}</td>
-                            <td>{reservation.departureDate}</td>
-                            <td>{reservation.guestsNumber}</td>
-                            <td>{reservation.guestName} {reservation.guestLastName}</td>
-                            <td>{reservation.guestMail}</td>
-                            <td>{reservation.guestPhone}</td>
-                            <td>€{reservation.totalPrice}</td>
-                            {/* <td>
-                                <Button variant="success" onClick={() => toggleRowConfirmation(reservation._id)}>
-                                    Confirm
-                                </Button>
-                            </td> */}
-                            <td>
-                                <Button variant="danger" onClick={() => handleDeleteReservation(reservation._id)}>
-                                    Delete
-                                </Button>
-                            </td>
+            <div className="reservation-table-wrapper">
+                <table className="reservation-table">
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>Property Name</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Guests</th>
+                            <th>Customer</th>
+                            <th>Mail</th>
+                            <th>Phone</th>
+                            <th>Total Price</th>
+                            {/* <th>Confirm</th> */}
+                            <th>Delete</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {reservations.map((reservation) => (
+                            <tr key={reservation._id} className={confirmedRows.includes(reservation._id) ? 'confirmed-row' : ''}>
+                                <td>{reservation._id}</td>
+                                <td>{reservation.propertyName}</td>
+                                <td>{reservation.arrivalDate}</td>
+                                <td>{reservation.departureDate}</td>
+                                <td>{reservation.guestsNumber}</td>
+                                <td>{reservation.guestName} {reservation.guestLastName}</td>
+                                <td>{reservation.guestMail}</td>
+                                <td>{reservation.guestPhone}</td>
+                                <td>€{reservation.totalPrice}</td>
+                                {/* <td>
+                                    <Button variant="success" onClick={() => toggleRowConfirmation(reservation._id)}>
+                                        Confirm
+                                    </Button>
+                                </td> */}
+                                <td>
+                                    <Button variant="danger" onClick={() => handleDeleteReservation(reservation._id)}>
+                                        Delete
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </AdminLayout>
     );
 }
-

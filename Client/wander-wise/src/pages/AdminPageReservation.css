@@ -24,3 +24,9 @@
     background-color: green;
     color: rgb(47, 207, 15);
 } */
+
+.reservation-table-wrapper {
+
+    overflow-x: auto;
+
+}
