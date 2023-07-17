@@ -210,25 +210,24 @@ export default function PropertyPage() {
                     />
                   </Col>
                 </Row>
-                <Row className="mb-3">
-                  <Col xs={12} md={12} style={{ maxWidth: "250px" }}>
-                    <div className="custom-select-container">
-                      <Select
-                        size="lg"
-                        name="guestsNumber"
-                        placeholder="Guests"
-                        className="custom-input guest-list "
-                        style={{ width: "100%" }}
-                        clearable
-                        required
-                        value={formState.guestsNumber}
-                        onChange={(value) => setFormState((prevState) => ({ ...prevState, guestsNumber: value }))}
-                        data={Array.from({ length: property?.maximumGuest }, (_, index) => ({
-                          value: index + 1,
-                          label: (index + 1).toString()
-                        }))}
-                      />
-                    </div>
+                <Row className="mb-3 d-flex justify-content-center">
+                  <Col xs={12} md={12} className="d-flex justify-content-center" style={{ maxWidth: "250px" }}>
+                    {/* <div className="custom-select-container d-flex justify-content-center"> */}
+                    <Select
+                      size="lg"
+                      name="guestsNumber"
+                      placeholder="Guests"
+                      className="custom-input guest-list "
+                      clearable
+                      required
+                      value={formState.guestsNumber}
+                      onChange={(value) => setFormState((prevState) => ({ ...prevState, guestsNumber: value }))}
+                      data={Array.from({ length: property?.maximumGuest }, (_, index) => ({
+                        value: index + 1,
+                        label: (index + 1).toString()
+                      }))}
+                    />
+                    {/* </div> */}
                   </Col>
                 </Row>
                 <Row className="mb-3">
