@@ -151,9 +151,9 @@ export default function PropertyPage() {
               <h5 className="mb-4">From €{property?.pricePerNight}/Night</h5>
               <div className="d-flex flex-column justify-content-center">
                 <Row className="mb-3">
-                  <Col xs={12} md={12} className="ps-3 pe-3">
+                  <Col xs={12} md={12} className="ps-3 pe-3 ">
                     <DatePicker
-                      style={{ width: "100%" }}
+                      style={{ width: "100%", zIndex: "1" }}
                       className="ps-3 custom-datepicker input-request"
                       selected={startDate}
                       onChange={handleArrivalDateChange}
@@ -183,6 +183,7 @@ export default function PropertyPage() {
                 <Row className="mb-3">
                   <Col xs={12} md={12} className="ps-3 pe-3">
                     <DatePicker
+                      style={{ width: "100%", zIndex: "1" }}
                       className="ps-3 custom-datepicker custom-input"
                       selected={endDate}
                       onChange={handleDepartureDateChange}
@@ -211,9 +212,10 @@ export default function PropertyPage() {
                   </Col>
                 </Row>
                 <Row className="mb-3 d-flex justify-content-center">
-                  <Col xs={12} md={12} className="d-flex justify-content-center" style={{ maxWidth: "250px" }}>
+                  <Col xs={12} md={12} className="d-flex justify-content-center" style={{ maxWidth: "250px", zIndex: "0" }}>
                     {/* <div className="custom-select-container d-flex justify-content-center"> */}
                     <Select
+                      // style={{ zIndex: "5" }}
                       size="lg"
                       name="guestsNumber"
                       placeholder="Guests"
