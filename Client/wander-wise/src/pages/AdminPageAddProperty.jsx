@@ -104,31 +104,31 @@ export default function AdminPageAddProperty() {
                     <Form onSubmit={formSubmittedHandler}>
                         <Form.Group controlId="name">
                             <Form.Label>Property Name</Form.Label>
-                            <Form.Control type="text" name="name" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="text" name="name" onChange={formHandler} required style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="city">
                             <Form.Label>City</Form.Label>
-                            <Form.Control type="text" name="city" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="text" name="city" onChange={formHandler} required style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="maximumGuest">
                             <Form.Label>Max Guest</Form.Label>
-                            <Form.Control type="number" name="maximumGuest" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="number" name="maximumGuest" onChange={formHandler} required style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="bedrooms">
                             <Form.Label>Bedrooms</Form.Label>
-                            <Form.Control type="number" name="bedrooms" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="number" name="bedrooms" onChange={formHandler} required style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="bathrooms">
                             <Form.Label>Bathrooms</Form.Label>
-                            <Form.Control type="number" name="bathrooms" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="number" name="bathrooms" onChange={formHandler} required style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="description">
                             <Form.Label>Description</Form.Label>
-                            <Form.Control as="textarea" rows={3} name="description" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control as="textarea" rows={3} name="description" onChange={formHandler} required style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="type">
                             <Form.Label>Type</Form.Label>
-                            <Form.Select name="type" onChange={formHandler} aria-label="Default select example" style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }}>
+                            <Form.Select name="type" onChange={formHandler} aria-label="Default select example" style={{ width: "250px", maxWidth: "300px", marginLeft: "auto", marginRight: "auto" }}>
                                 <option>Choose a type</option>
                                 <option value="Villa">Villa</option>
                                 <option value="Apartment">Apartment</option>
@@ -144,7 +144,7 @@ export default function AdminPageAddProperty() {
                                 name="latitude"
                                 onChange={formHandler}
                                 required
-                                style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }}
+                                style={{ width: "250px", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }}
                             />
                         </Form.Group>
                         <Form.Group controlId="longitude">
@@ -154,16 +154,16 @@ export default function AdminPageAddProperty() {
                                 name="longitude"
                                 onChange={formHandler}
                                 required
-                                style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }}
+                                style={{ width: "250px", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }}
                             />
                         </Form.Group>
                         <Form.Group controlId="pricePerNight">
                             <Form.Label>Price/Night</Form.Label>
-                            <Form.Control type="number" name="pricePerNight" onChange={formHandler} required style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="number" name="pricePerNight" onChange={formHandler} required style={{ width: "250px", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Label>Add Cover Image</Form.Label>
                         <Form.Group className="mb-3" controlId="formFile">
-                            <Form.Control type="file" name="img" placeholder="Enter Image" ref={img} style={{ width: "60vw", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
+                            <Form.Control type="file" name="img" placeholder="Enter Image" ref={img} style={{ width: "250px", maxWidth: "3  00px", marginLeft: "auto", marginRight: "auto" }} />
                         </Form.Group>
                         <Form.Group controlId="features">
                             <Form.Label>Features</Form.Label>
@@ -294,7 +294,7 @@ export default function AdminPageAddProperty() {
                                 </Col>
                             </Row>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formButton">
+                        <Form.Group className="my-3" controlId="formButton">
                             <Button variant="dark" type="submit">
                                 Submit
                             </Button>
